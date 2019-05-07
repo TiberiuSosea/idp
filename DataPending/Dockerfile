@@ -8,8 +8,9 @@ WORKDIR /app
 COPY . /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip install -r DataPending/requirements.txt
-
+RUN pip install Flask
+RUN pip install Flask-BasicAuth
+RUN pip install mysql-connector
 # Make port 5001 available to the world outside this container
 EXPOSE 5001
 
