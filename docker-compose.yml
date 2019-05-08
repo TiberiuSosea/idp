@@ -1,6 +1,8 @@
 version: '3.3'
 services:
+
   administration:
+    image: tiberiudid/idp:latest2
     build: ./DataPending
     links:
       - database
@@ -21,6 +23,7 @@ services:
       - ./DatabaseInitialization:/docker-entrypoint-initdb.d/:ro
 
   server:
+    image: tiberiudid/idp:latest
     build: ./Server
     links:
       - database
